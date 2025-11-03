@@ -36,15 +36,13 @@
     		<version>8.0.29</version>
 		</dependency>
 		-->
-		
-		<!-- PostgreSQL 
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
     		<artifactId>postgresql</artifactId>
     		<version>42.4.0</version>
 		</dependency>
-		-->
-		
+
 		<!-- Oracle 
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
