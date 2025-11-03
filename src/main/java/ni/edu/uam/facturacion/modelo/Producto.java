@@ -2,10 +2,10 @@ package ni.edu.uam.facturacion.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.openxava.annotations.DescriptionsList;
-import org.openxava.annotations.Required;
+import org.openxava.annotations.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Getter @Setter
@@ -24,4 +24,14 @@ public class Producto {
     )
     @DescriptionsList
     Categoria categoria;
+
+    @Money
+    BigDecimal precio;
+
+    @Files
+    @Column(length=32)
+    String fotos;
+
+    @TextArea
+    String observaciones;
 }
