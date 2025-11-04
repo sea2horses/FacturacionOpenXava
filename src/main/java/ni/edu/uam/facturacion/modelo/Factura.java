@@ -10,6 +10,7 @@ import org.openxava.calculators.CurrentYearCalculator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collection;
 
 @Entity
 @Getter @Setter
@@ -39,4 +40,8 @@ public class Factura {
 
     @ManyToOne(fetch=FetchType.LAZY, optional = false)
     Cliente cliente;
+
+    @ElementCollection
+    @ListProperties("producto.numero, producto.descripcion, cantidad")
+    Collection<Detalle> detalles;
 }
