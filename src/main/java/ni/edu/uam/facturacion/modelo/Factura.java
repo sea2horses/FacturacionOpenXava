@@ -45,6 +45,7 @@ public class Factura {
     String observaciones;
 
     @ManyToOne(fetch=FetchType.LAZY, optional = false)
+    @ReferenceView("Simple")
     Cliente cliente;
 
     @ElementCollection
