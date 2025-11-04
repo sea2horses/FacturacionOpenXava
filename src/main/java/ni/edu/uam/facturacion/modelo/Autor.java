@@ -3,11 +3,10 @@ package ni.edu.uam.facturacion.modelo;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.openxava.annotations.ListProperties;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Getter @Setter
@@ -20,4 +19,8 @@ public class Autor {
 
     @Column(length=50)
     String nombre;
+
+    @OneToMany(mappedBy = "autor")
+    @ListProperties("numero, descripcion, precio")
+    Collection<Producto> productos;
 }
